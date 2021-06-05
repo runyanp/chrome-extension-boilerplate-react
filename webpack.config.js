@@ -200,9 +200,10 @@ var options = {
 
 if (env.NODE_ENV === 'development') {
   options.devtool = 'cheap-module-source-map';
+  options.minimize = false;
 } else {
   options.optimization = {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         extractComments: false,
